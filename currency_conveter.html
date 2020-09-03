@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<script>	
+		var gbp, usd, eur, cad, aud, inr;
+		function init()
+		{
+		    	gbp = document.getElementById("GBP");	
+		    	usd = document.getElementById("USD");
+		    	eur = document.getElementById("EUR");
+		    	cad = document.getElementById("CAD");
+		    	aud = document.getElementById("AUD");
+			inr = document.getElementById("INR");
+		}
+		
+		function gbpfunc()
+		{
+			inr.value = parseFloat(gbp.value) * 97.42;
+			usd.value = parseFloat(gbp.value) * 0.49246;
+		    	eur.value = parseFloat(gbp.value) * 0.69714;
+		    	cad.value = parseFloat(gbp.value) * 0.50221;
+	    		aud.value = parseFloat(gbp.value) * 0.43497;
+		}
+	
+		function inrfunc()
+		{
+			gbp.value = parseFloat(inr.value) * 0.010;
+			usd.value = parseFloat(inr.value) * 0.014;
+		    	eur.value = parseFloat(inr.value) * 0.012;
+		    	cad.value = parseFloat(inr.value) * 0.018;
+		    	aud.value = parseFloat(inr.value) * 0.019;
+		}
+	
+		function eurfunc()
+		{
+			inr.value = parseFloat(eur.value) * 86.87;
+			gbp.value = parseFloat(eur.value) * 1.43448;	
+		    	usd.value = parseFloat(eur.value) * 0.70641;
+		    	cad.value = parseFloat(eur.value) * 0.72037;
+		    	aud.value = parseFloat(eur.value) * 0.62382;
+		}
+	
+		function cadfunc()
+		{	
+		    	inr.value = parseFloat(cad.value) * 56.06;		
+			gbp.value = parseFloat(cad.value) * 1.99169;
+		    	usd.value = parseFloat(cad.value) * 0.98054;
+		    	eur.value = parseFloat(cad.value) * 1.38814;
+		    	aud.value = parseFloat(cad.value) * 0.86613;
+		}
+	
+		function audfunc()
+		{
+		    	inr.value = parseFloat(aud.value) * 53.56;
+			gbp.value = parseFloat(aud.value) * 2.29964;
+		    	usd.value = parseFloat(aud.value) * 1.13262;
+		    	eur.value = parseFloat(aud.value) * 1.60329;
+		    	cad.value = parseFloat(aud.value) * 0.88297;    
+		}
+
+		function usdfunc()
+		{
+	    		inr.value = parseFloat(usd.value) * 73.52;
+			gbp.value = parseFloat(usd.value) * 2.03032;
+		    	eur.value = parseFloat(usd.value) * 1.41544;
+		    	cad.value = parseFloat(usd.value) * 1.01941;
+	    		aud.value = parseFloat(usd.value) * 0.88297;
+		}
+		init();
+	</script>
+	</head>	
+	<style>
+	h1
+	{
+		font-size: 36px;     
+ 		color: green;
+ 		text-align: center; 
+ 		text-decoration: underline
+	}
+	h3
+	{
+		font-size: 20px;
+		color: yellow;
+		text- align: center;
+	}
+	body
+	{
+		font-size: 24px;     
+ 		color: yellow;
+ 		text-align: center; 
+		font-family: verdana; 
+ 		font-weight: bold;
+ 	}
+	</style>	
+	<body onload="init()">
+		<h1> CURRENCY CONVERTER </h1>
+		<h3> (Enter value into any of the following) </h3>
+		<label for="INR"> INR </label>
+		<input type="text" id="INR" size="20" value="0" onchange="inrfunc()"/>
+		<br><br>
+		<label for="GBP"> GBP </label>
+		<input type="text" id="GBP" size="20" value="0" onchange="gbpfunc()"/>
+		<br><br>
+		<label for="USD"> USD </label>
+		<input type="text" id="USD" size="20" value="0" onchange="usdfunc()" />
+		<br><br>
+    		<label for="EUR"> EUR </label>
+    		<input type="text" id="EUR" size="20" value="0" onchange="eurfunc()" />
+    		<br><br>
+    		<label for="CAD"> CAD </label>
+		<input type="text" id="CAD" size="20" value="0" onchange="cadfunc()" />
+    		<br><br>
+		<label for="AUD"> AUD </label>  
+		<input type="text" id="AUD" size="20" value="0" onchange="audfunc()" />	
+		<br><br>
+	</body>
+</html>
